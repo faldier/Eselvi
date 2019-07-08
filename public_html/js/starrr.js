@@ -1,5 +1,4 @@
 var slice = [].slice;
-
 (function($, window) {
   var Starrr;
   window.Starrr = Starrr = (function() {
