@@ -1,0 +1,71 @@
+  ul {
+    list-style: none;
+  }
+
+  p{
+    font-size: 13px;
+    margin: 0px;
+  }
+
+  a:hover{
+   text-decoration: none;
+  }
+
+  .LogoImg{
+    width: 175px;
+    height: 50px;
+  }
+
+  .bannerImg{
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .promoLinksDiv{
+    margin-top: 15px;
+  }
+
+  .promoLinksDiv a{
+    margin-right: 15px;
+  }
+
+  .productDiv {
+    margin-top: 20px;
+    height: 250px;
+  }
+
+  .titleProductDiv{
+    height: 30px;
+    overflow: hidden;
+    overflow: hidden;
+  }
+
+  .productDiv img{
+    height: 110px;
+  }
+
+  .arrowImg{
+    margin-top: 50%;
+    margin-left: 30%;
+    width: 50px;
+  }
+
+  .socialMediaImg {
+    height: 50px;
+    margin-left: 15px;
+  }
+
+  .old_price{
+    text-decoration: line-through;
+    font-size: 15px;
+  }
+
+  .new_price{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .customersReviewDiv .lightSlider {
+    height: 150px;
+  }

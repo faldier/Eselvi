@@ -1,0 +1,15 @@
+.lSPrev {
+  background-color: red;
+  right: -25px;
+}
+.lSNext {
+  background-color: red;
+}
+
+#sliderLi div h3{
+  font-size: 12px;
+}
+
+#sliderLi div h3{
+  margin-top: -15px;
+}
