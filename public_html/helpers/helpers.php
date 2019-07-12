@@ -47,7 +47,7 @@
   }
 
   function permission_error_redirect(){
-    header('Location:../index.php');
+    header('Location:../login.php');
   }
 
   function pretty_date($date){

@@ -5,8 +5,10 @@
   include 'includes/navigation.php';
 
 
-  $email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
-  $email = trim($email);
+  // $email = ((isset($_POST['email']))?sanitize($_POST['email']):'');
+  // $email = trim($email);
+  $username = ((isset($_POST['username']))?sanitize($_POST['username']):'');
+  $username = trim($username);
   $password = ((isset($_POST['password']))?sanitize($_POST['password']):'');
   $password = trim($password);
 
@@ -14,8 +16,8 @@
 
   if($_POST){
     // Form Validation
-    if(empty($_POST['email']) || empty($_POST['password'])){
-      $errors[] = 'You must provide email and password.';
+    if(empty($_POST['username']) || empty($_POST['password'])){
+      $errors[] = 'You must provide username and password.';
     }
 
     // Password is more than 6 characters
@@ -23,18 +25,18 @@
       $errors[] = 'Password must be at least 6 characters.';
     }
 
-    //Validate email
-    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-      $errors[] = 'You must enter a valid email.';
-    }
+    // //Validate email
+    // if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    //   $errors[] = 'You must enter a valid email.';
+    // }
 
-    // Check if email exist in the database
-    $usersQuery = $conn->query("SELECT * FROM users WHERE email = '$email'");
+    // Check if user exist in the database
+    $usersQuery = $conn->query("SELECT * FROM users WHERE username = '$username'");
     $user = mysqli_fetch_assoc($usersQuery);
     $userCount  = mysqli_num_rows($usersQuery);
 
     if($userCount < 1){
-      $errors[] = 'That email doesnt exist in our database.';
+      $errors[] = $username .'This user doesnt exist in our database.';
     }
 
     if(!password_verify($password, $user['password'])){
@@ -55,13 +57,17 @@
     <div class="col-md-6">
       <h2 class="text-center">Login</h2><br>
       <form  action="login.php" method="post">
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="email">Email:</label>
           <input type="email" name="email" id="email" class="form-control" value="<?=$email;?>">
+        </div> -->
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="username" name="username" id="username" class="form-control" value="">
         </div>
         <div class="form-group">
           <label for="password">Password:</label>
-          <input type="password" name="password" id="password" class="form-control" value="<?=$password;?>">
+          <input type="password" name="password" id="password" class="form-control" value="">
         </div>
         <div class="form-group">
           <input type="submit" name="" class="btn btn-success" value="Login">
